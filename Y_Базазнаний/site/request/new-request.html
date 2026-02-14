@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Мастер заявки — Standalone</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="topbar">
+      <div class="brand">Request Wizard</div>
+      <nav class="nav">
+        <a class="btn" href="../index.html">На главную</a>
+        <a class="btn" href="../knowledge/montage-process.html">База знаний</a>
+      </nav>
+    </header>
+
+    <section class="card">
+      <h1 style="margin-top:0">Быстрая заявка на медиоуслугу</h1>
+      <p class="meta">Эта версия пока не отправляет данные в Jira. Она собирает валидный JSON для будущей интеграции.</p>
+
+      <form id="requestForm">
+        <div class="row">
+          <div>
+            <label for="serviceType">Тип услуги</label>
+            <select id="serviceType" name="serviceType" required>
+              <option value="">Выберите услугу</option>
+              <option value="live_stream">Прямая трансляция</option>
+              <option value="video_recording">Запись выступления</option>
+              <option value="promo_video">Промо-ролик</option>
+            </select>
+          </div>
+          <div>
+            <label for="eventDate">Дата события</label>
+            <input id="eventDate" name="eventDate" type="date" required />
+          </div>
+        </div>
+
+        <div class="row" style="margin-top:10px">
+          <div>
+            <label for="location">Локация</label>
+            <input id="location" name="location" type="text" placeholder="Офис / студия / площадка" required />
+          </div>
+          <div>
+            <label for="duration">Длительность (часы)</label>
+            <input id="duration" name="duration" type="number" min="1" max="24" value="2" required />
+          </div>
+        </div>
+
+        <div style="margin-top:10px">
+          <label for="techNeeds">Технические требования</label>
+          <textarea id="techNeeds" name="techNeeds" placeholder="Сколько микрофонов, камер, нужен ли пульт, интернет, экран и т.д." required></textarea>
+        </div>
+
+        <div style="margin-top:10px">
+          <label for="notes">Дополнительно</label>
+          <textarea id="notes" name="notes" placeholder="Контакты, ограничения площадки, особые пожелания"></textarea>
+        </div>
+
+        <div class="actions">
+          <button class="btn primary" type="submit">Проверить и собрать JSON</button>
+          <button class="btn" type="button" id="copyJsonBtn">Скопировать JSON</button>
+        </div>
+      </form>
+
+      <div id="notice" class="notice"></div>
+      <h2 class="section-title">Результат (черновик для интеграции)</h2>
+      <pre id="jsonPreview">{
+  "status": "waiting_for_input"
+}</pre>
+    </section>
+  </main>
+
+  <script src="../js/request-wizard.js"></script>
+</body>
+</html>

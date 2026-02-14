@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Media Team Hub — MVP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="topbar">
+      <div class="brand">Media Team Hub</div>
+      <nav class="nav">
+        <a class="btn" href="./knowledge/montage-process.html">База знаний</a>
+        <a class="btn primary" href="./request/new-request.html">Создать заявку</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Standalone MVP: база знаний + сервис-бриф</h1>
+      <p>Демо-версия без интеграций. Цель: показать рабочий сайт, структуру контента и мастер заявки с проверкой данных до этапа подключения Jira/PDF/SSO.</p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Модуль 1: База знаний</h2>
+        <p class="meta">Процессы, инструкции, чеклисты по ролям команды.</p>
+        <div style="margin-top:10px">
+          <span class="pill">Монтаж</span>
+          <span class="pill">Оператор</span>
+          <span class="pill">Трансляции</span>
+        </div>
+        <div class="actions">
+          <a class="btn" href="./knowledge/montage-process.html">Открыть тестовую статью</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>Модуль 2: Быстрый заказ услуг</h2>
+        <p class="meta">Пошаговая форма с обязательными полями. Пока результат только в локальный JSON-preview.</p>
+        <div style="margin-top:10px">
+          <span class="pill">Прямая трансляция</span>
+          <span class="pill">Съемка</span>
+          <span class="pill">Промо</span>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="./request/new-request.html">Открыть мастер заявки</a>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
